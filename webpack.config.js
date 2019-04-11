@@ -10,7 +10,13 @@ module.exports = {
     plugins: [// 插件
         new HtmlWebpackPlugin({ //自动生成HTML并引入js
             title: 'webpack',
-            template:'./src/index.html'
+            template:'./src/index.html',
+            hash:true,
+            minify:{
+                collapseWhitespace: true,
+                removeScriptTypeAttributes: true,
+                removeAttributeQuotes:true
+            }
         })
     ]
 
