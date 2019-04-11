@@ -47,3 +47,15 @@ plugins: [// 插件
     })
 ]
 ```
+- 设置clean-webpack-plugin插件，清除原来生成的文件
+```
+yarn add clean-webpack-plugin -D
+```
+- 设置webpack-dev-server,执行 npx webpack-dev-server
+，生成内存中的index.html,并执行
+```
+yarn add webpack-dev-server -D
+```
+- 设置package.json
+```
+```

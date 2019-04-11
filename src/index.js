@@ -1,3 +1,3 @@
 
 import num from './home';
-console.log(num);
+console.log(num+11);
