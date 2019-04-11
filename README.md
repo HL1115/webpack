@@ -84,4 +84,25 @@ module: {
         }
     ]
 }
+loader 带参数
+module: {
+    rules:[
+        {
+            test:/\.css$/,
+            use:[//loader匹配的顺序是从右往左
+                {
+                    loader:'style-loader',
+                    options: {
+                        insertAt: 'top'
+                    }
+                },
+                'css-loader'
+            ]
+        }
+    ]
+}
+```
+- less-loader
+```
+yarn add less less-loader -D
 ```

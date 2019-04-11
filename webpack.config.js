@@ -37,6 +37,19 @@ module.exports = {
                     },
                     'css-loader'
                 ]
+            },
+            {
+                test:/\.less$/,
+                use:[
+                    {
+                        loader:'style-loader',
+                        options: {
+                            insertAt: 'top'
+                        }
+                    },
+                    'css-loader',
+                    'less-loader'
+                ]
             }
         ]
     }
