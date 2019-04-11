@@ -29,3 +29,9 @@ module.exports = {
     "build":"webpack"
 },
 ```
+- 设定 HtmlWebpackPlugin
+```
+安装
+yarn add html-webpack-plugin -D
+配置
+```
