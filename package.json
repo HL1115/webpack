@@ -2,7 +2,14 @@
   "name": "webpack",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts":{
+    "build":"webpack"
+  },
   "repository": "https://github.com/HL1115/webpack",
   "author": "HL1115 <1127570788@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
 }
