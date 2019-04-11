@@ -55,7 +55,33 @@ yarn add clean-webpack-plugin -D
 ，生成内存中的index.html,并执行
 ```
 yarn add webpack-dev-server -D
+可配置webpack.config.js
+devServer:{
+    port:3000
+},
 ```
 - 设置package.json
 ```
+"scripts": {
+    "build": "webpack",
+    "start":"webpack-dev-server --open"
+},
+```
+### loader
+- style-loader css-loader
+```
+安装：
+yarn add style-loader css-loader -D
+配置：
+module: {
+    rules:[
+        {
+            test:/\.css$/,
+            use:[//loader匹配的顺序是从右往左
+                'style-loader',
+                'css-loader'
+            ]
+        }
+    ]
+}
 ```
