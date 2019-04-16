@@ -137,11 +137,11 @@ yarn add babel-loader @babel/core @babel/preset-env -D
     use: {
         loader: 'babel-loader',
         options: {
-        presets: ['@babel/preset-env',"@babel/preset-react"],
-        "plugins": [
-            "@babel/plugin-transform-runtime",
-            "@babel/plugin-proposal-class-properties"
-        ]
+            presets: ['@babel/preset-env',"@babel/preset-react"],
+            "plugins": [
+                "@babel/plugin-transform-runtime",
+                "@babel/plugin-proposal-class-properties"
+            ]
         }
     }
 }
