@@ -126,3 +126,23 @@ new MiniCssExtractPlugin({
     filename: 'index.css',
 }),
 ```
+- babel-loader
+```
+安装：
+yarn add babel-loader @babel/core @babel/preset-env -D
+配置：
+{
+    test: /\.js$/,
+    exclude: /(node_modules|bower_components)/,
+    use: {
+        loader: 'babel-loader',
+        options: {
+        presets: ['@babel/preset-env',"@babel/preset-react"],
+        "plugins": [
+            "@babel/plugin-transform-runtime",
+            "@babel/plugin-proposal-class-properties"
+        ]
+        }
+    }
+}
+```
