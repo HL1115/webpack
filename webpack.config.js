@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'development',//模式：production/development
     devServer: {
@@ -17,23 +18,29 @@ module.exports = {
             title: 'webpack',
             template: './src/index.html',
             hash: true,
-            minify: {
-                collapseWhitespace: true,
-                removeScriptTypeAttributes: true,
-                removeAttributeQuotes: true
-            }
-        })
+            // minify: {
+            //     collapseWhitespace: true,
+            //     removeScriptTypeAttributes: true,
+            //     removeAttributeQuotes: true
+            // }
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'index.css',
+        }),
     ],
     module: {
         rules:[
             {
                 test:/\.css$/,
                 use:[//loader匹配的顺序是从右往左
+                    // {
+                    //     loader:'style-loader',
+                    //     options: {
+                    //         insertAt: 'top'
+                    //     }
+                    // },
                     {
-                        loader:'style-loader',
-                        options: {
-                            insertAt: 'top'
-                        }
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     'css-loader'
                 ]
@@ -41,16 +48,27 @@ module.exports = {
             {
                 test:/\.less$/,
                 use:[
-                    {
-                        loader:'style-loader',
-                        options: {
-                            insertAt: 'top'
-                        }
-                    },
+                    // {
+                    //     loader:'style-loader',
+                    //     options: {
+                    //         insertAt: 'top'
+                    //     }
+                    // },
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'less-loader'
                 ]
-            }
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: ['@babel/preset-env']
+                  }
+                }
+              }
         ]
     }
 

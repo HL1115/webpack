@@ -106,3 +106,23 @@ module: {
 ```
 yarn add less less-loader -D
 ```
+- mini-css-extract-plugin 抽取css
+```
+安装：
+yarn add mini-css-extract-plugin -D
+配置代码：
+loader中
+{
+    test:/\.css$/,
+    use:[
+        {
+            loader: MiniCssExtractPlugin.loader,
+        },
+        'css-loader'
+    ]
+},
+插件中
+new MiniCssExtractPlugin({
+    filename: 'index.css',
+}),
+```
