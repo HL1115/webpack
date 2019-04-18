@@ -5,7 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'development',//模式：production/development
     devServer: {
-        port: 3000
+        port: 3000,
+        proxy: {
+            "/api": "http://localhost:8080"
+        }
     },
     entry: './src/index.js',
     output: {
