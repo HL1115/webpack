@@ -6,6 +6,7 @@ export default class Header extends Component {
             <div className="header">
                 <img src={require('../../assets/imgs/logo.png')} alt=""/>
                 <button>快速定制</button>
+                <i className="iconfont icon-caidan"></i>
             </div>
         )
     }
