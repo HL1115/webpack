@@ -68,11 +68,21 @@ module.exports = {
                     presets: ['@babel/preset-env',"@babel/preset-react"],
                     "plugins": [
                         "@babel/plugin-transform-runtime",
-                        "@babel/plugin-proposal-class-properties"
+                        "@babel/plugin-proposal-class-properties",
+                        ["import", { libraryName: "antd-mobile", style: "css" }]
                     ]
                   }
                 }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  }
+                ]
             }
         ]
-    }
+    },
+    devtool:'source-map'
 };

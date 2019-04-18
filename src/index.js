@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'antd-mobile/dist/antd-mobile.css'; 
+import './assets/common.less';
 import './index.less';
-let ele = <h1>{num}</h1>;
+import Home from './containers/Home';
 ReactDOM.render(
-    ele,
+    <Home />,
     document.querySelector('#root')
 )
