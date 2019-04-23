@@ -12,7 +12,7 @@ export default class Banner extends Component {
                         <span>目的地</span>    
                     </label>
                     <div>
-                        <input type="text"/>
+                        <input type="text" placeholder="日本 美国 英国 地中海"/>
                     </div>
                     <button>
                         <i className="iconfont icon-search"></i>
