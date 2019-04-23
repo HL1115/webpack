@@ -4,7 +4,7 @@ export default class Loading extends Component {
     render() {
         return (
             <div className="loading">
-                <i className="iconfont icon-jiazai"></i>
+                <i className="iconfont icon-loading"></i>
             </div>
         )
     }
