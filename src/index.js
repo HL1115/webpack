@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import './assets/common.less';
 import './assets/fonts/iconfont.css';
 import './index.less';
-import Home from './containers/Home';
+import App from './containers/App';
 ReactDOM.render(
-    <Home />,
+    <App />,
     document.querySelector('#root')
 )

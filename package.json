@@ -33,6 +33,7 @@
     "@babel/runtime": "^7.4.3",
     "antd-mobile": "^2.2.11",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   }
 }
