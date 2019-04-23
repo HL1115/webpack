@@ -11,6 +11,12 @@ export default class Banner extends Component {
                         <i className="iconfont icon-weizhi"></i>
                         <span>目的地</span>    
                     </label>
+                    <div>
+                        <input type="text"/>
+                    </div>
+                    <button>
+                        <i className="iconfont icon-search"></i>
+                    </button>
                 </div>
             </div>
         )
