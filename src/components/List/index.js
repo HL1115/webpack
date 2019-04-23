@@ -7,7 +7,7 @@ export default class index extends Component {
                 {
                     this.props.list.map((item,index)=>{
                         return (
-                            <li>
+                            <li key={item.text}>
                                 <img src={item.img} alt=""/>
                                 <span>{item.text}</span>
                             </li>
