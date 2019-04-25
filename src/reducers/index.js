@@ -1,10 +1,5 @@
-import {GET_THEME_TOUR} from '../actionTypes/home';
-let initValue = [];
-export default (state=initValue,action)=>{
-    switch(action.type){
-        case GET_THEME_TOUR:
-            return action.data;
-        default :
-            return state;
-    }
-}
+import {combineReducers} from 'redux';
+import home from './home';
+export default combineReducers({
+    home:home
+})

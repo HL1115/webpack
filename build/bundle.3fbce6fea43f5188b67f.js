@@ -33141,7 +33141,7 @@ var get_theme = function get_theme(data) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "d207c79bcdf0d89776435b3e3caec1e2.png";
+module.exports = __webpack_require__.p + "img/d207c79bcdf0d89776435b3e3caec1e2.png";
 
 /***/ }),
 
@@ -33519,6 +33519,47 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./src/containers/Home/subComponents/Nav/data.js":
+/*!*******************************************************!*\
+  !*** ./src/containers/Home/subComponents/Nav/data.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var theme = [{
+  type: 0,
+  tit: '意大利塞浦路斯+马耳他+西西里岛10晚13天'
+}, {
+  type: 0,
+  tit: '意他+西西里晚13天'
+}, {
+  type: 0,
+  tit: '意大利塞西西里3天'
+}, {
+  type: 1,
+  tit: '意大利7'
+}, {
+  type: 1,
+  tit: '意大利6'
+}, {
+  type: 2,
+  tit: '意大5'
+}, {
+  type: 2,
+  tit: '意2'
+}, {
+  type: 2,
+  tit: '塞3'
+}, {
+  type: 2,
+  tit: '意大4'
+}];
+/* harmony default export */ __webpack_exports__["default"] = (theme);
+
+/***/ }),
+
 /***/ "./src/containers/Home/subComponents/Nav/index.js":
 /*!********************************************************!*\
   !*** ./src/containers/Home/subComponents/Nav/index.js ***!
@@ -33550,6 +33591,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_home__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../actions/home */ "./src/actions/home.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./data */ "./src/containers/Home/subComponents/Nav/data.js");
+
 
 
 
@@ -33583,13 +33626,19 @@ function (_Component) {
     _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, (_getPrototypeOf2 = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(Nav)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4___default()(_this), "handleClick", function (id) {
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get('/api/nav', {
-        params: {
-          id: id
-        }
-      }).then(function (res) {
-        _this.props.dispatch(Object(_actions_home__WEBPACK_IMPORTED_MODULE_11__["get_theme"])(res.data));
+      console.log(_data__WEBPACK_IMPORTED_MODULE_12__["default"]); // axios.get('/api/nav',{
+      //     params:{
+      //         id:id
+      //     }
+      // }).then((res)=>{
+      //     this.props.dispatch(get_theme(res.data))
+      // })
+
+      var arr = _data__WEBPACK_IMPORTED_MODULE_12__["default"].filter(function (item) {
+        return id == item.type;
       });
+
+      _this.props.dispatch(Object(_actions_home__WEBPACK_IMPORTED_MODULE_11__["get_theme"])(arr));
     });
 
     return _this;
@@ -33693,7 +33742,7 @@ function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    data: state
+    data: state.home
   };
 };
 
@@ -33867,10 +33916,10 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_
 
 /***/ }),
 
-/***/ "./src/reducers/index.js":
-/*!*******************************!*\
-  !*** ./src/reducers/index.js ***!
-  \*******************************/
+/***/ "./src/reducers/home.js":
+/*!******************************!*\
+  !*** ./src/reducers/home.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -33894,6 +33943,25 @@ var initValue = [];
 
 /***/ }),
 
+/***/ "./src/reducers/index.js":
+/*!*******************************!*\
+  !*** ./src/reducers/index.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ "./src/reducers/home.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  home: _home__WEBPACK_IMPORTED_MODULE_1__["default"]
+}));
+
+/***/ }),
+
 /***/ "./src/store/index.js":
 /*!****************************!*\
   !*** ./src/store/index.js ***!
@@ -33913,4 +33981,4 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.943058b7f5909c92ba00.js.map
+//# sourceMappingURL=bundle.3fbce6fea43f5188b67f.js.map

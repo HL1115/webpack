@@ -28,7 +28,7 @@ module.exports = {
             // }
         }),
         new MiniCssExtractPlugin({
-            filename: 'index.css',
+            filename: 'css/index.css',
         }),
     ],
     module: {
@@ -78,10 +78,24 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif|eot|ttf|svg|woff)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: [
                   {
                     loader: 'file-loader',
+                    options:{
+                        outputPath:'img'
+                    }
+                  }
+                ]
+            },
+            {
+                test: /\.(eot|ttf|svg|woff)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options:{
+                        outputPath:'fonts'
+                    }
                   }
                 ]
             }

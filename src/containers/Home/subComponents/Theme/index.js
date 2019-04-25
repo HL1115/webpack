@@ -21,7 +21,7 @@ class Theme extends Component {
 }
 let mapStateToProps = (state)=>{
     return{
-        data:state
+        data:state.home
     }
 }
 export default connect(mapStateToProps)(Theme);
