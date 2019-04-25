@@ -4,6 +4,7 @@ import Banner from './subComponents/banner';
 import List from '../../components/List';
 import axios from 'axios';
 import Nav from './subComponents/Nav';
+import Theme from './subComponents/Theme';
 export default class Home extends Component {
     constructor(){
         super();
@@ -25,6 +26,7 @@ export default class Home extends Component {
                 <Banner />
                 <List list={this.state.list}/>
                 <Nav />
+                <Theme />
             </div>
         )
     }
